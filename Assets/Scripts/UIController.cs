@@ -16,6 +16,7 @@ public class UiController : MonoBehaviour {
 
     private void Update()
     {
+        
     }
 
 #if UNITY_EDITOR
