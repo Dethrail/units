@@ -12,6 +12,7 @@ public class UiController : MonoBehaviour {
     private void Awake()
     {
         Debug.Log(_gameController.name);
+        _gameMenu.SetActive(false);
     }
 
     private void Update()
@@ -22,6 +23,7 @@ public class UiController : MonoBehaviour {
 #if UNITY_EDITOR
     private const string MainMenuName = "main menu";
     private const string ButtonRestart = "button - restart";
+    private const string ButtonBack = "button - back";
 
     private const string GameMenuName = "game menu";
     private const string ButtonPlay = "button - play";
@@ -49,6 +51,7 @@ public class UiController : MonoBehaviour {
         else {
             _gameMenu = gameMenuTransform.gameObject;
             AttachMethodToButton(_gameMenu, ButtonRestart, OnRestartClicked);
+            AttachMethodToButton(_gameMenu, ButtonBack, OnBackClicked);
         }
     }
 
@@ -88,6 +91,15 @@ public class UiController : MonoBehaviour {
     public void OnPlayClicked()
     {
         Debug.Log("Play");
+        ShowGameMenu();
+        HideMainMenu();
+    }
+    
+    public void OnBackClicked()
+    {
+        Debug.Log("Back");
+        ShowMainMenu();
+        HideGameMenu();
     }
 
     public void OnExitClicked()
