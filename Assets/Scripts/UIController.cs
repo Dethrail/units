@@ -27,6 +27,7 @@ public class UiController : MonoBehaviour {
     private const string ButtonPlay = "button - play";
     private const string ButtonExit = "button - exit";
 
+    
     private void OnValidate()
     {
         Transform mainMenuTransform = transform.Find(MainMenuName);
