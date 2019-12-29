@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MovementType
+public enum UnitType
 {
-    Straight = 1,
-    ZigZag = 2,
+    Ally = 1,
+    Enemy = 2,
 }
