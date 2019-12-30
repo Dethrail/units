@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using Ui.HUD;
-using Ui.MainMenu;
+using UI.HUD;
+using UI.MainMenu;
 using UnityEngine;
 
-namespace Ui
+namespace UI
 {
     public class GameUi : MonoBehaviour
     {

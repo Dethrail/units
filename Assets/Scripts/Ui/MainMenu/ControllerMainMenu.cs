@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
-namespace Ui.MainMenu
+namespace UI.MainMenu
 {
+    [RequireComponent(typeof(ViewMainMenu))]
+    [RequireComponent(typeof(ModelMainMenu))]
     public class ControllerMainMenu : MonoBehaviour
     {
         [Inject] private GameUi _gameUi;
         private ViewMainMenu _view;
+        private ModelMainMenu _model;
+        public Button playButton;
+        public Button exitButton;
 
         public void OnPlayClicked()
         {
@@ -33,14 +39,27 @@ namespace Ui.MainMenu
         #region Validation
 
 #if UNITY_EDITOR
+        private const string PlayButtonName = "button - play";
+        private const string ExitButtonName = "button - exit";
+
         private void OnValidate()
         {
             _view = GetComponent<ViewMainMenu>();
+            _model = GetComponent<ModelMainMenu>();
             if (_view == null)
             {
-                Debug.LogError("should have view");
                 return;
             }
+
+            if (_model == null)
+            {
+                return;
+            }
+
+            playButton = Utils.FindButton(gameObject, PlayButtonName);
+            exitButton = Utils.FindButton(gameObject, ExitButtonName);
+            Utils.AttachMethodToButton(gameObject, PlayButtonName, OnPlayClicked);
+            Utils.AttachMethodToButton(gameObject, ExitButtonName, OnExitClicked);
         }
 #endif
 

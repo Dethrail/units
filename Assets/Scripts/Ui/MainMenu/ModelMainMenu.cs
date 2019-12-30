@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Ui.MainMenu
+namespace UI.MainMenu
 {
     public class ModelMainMenu : MonoBehaviour
     {
@@ -9,10 +9,10 @@ namespace Ui.MainMenu
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            ViewMainMenu view = GetComponent<ViewMainMenu>();
-            if (view == null)
+            ControllerMainMenu controller = GetComponent<ControllerMainMenu>();
+            if (controller== null)
             {
-                Debug.LogError("should have view");
+                Debug.LogError("should have controller");
                 return;
             }
         }

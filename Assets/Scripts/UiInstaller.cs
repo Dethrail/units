@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Ui;
-using Ui.MainMenu;
+using UI;
+using UI.MainMenu;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;

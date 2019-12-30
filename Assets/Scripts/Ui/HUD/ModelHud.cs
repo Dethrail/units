@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Ui.HUD
+namespace UI.HUD
 {
     public class ModelHud : MonoBehaviour
     {
@@ -9,10 +9,10 @@ namespace Ui.HUD
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            ViewHud view = GetComponent<ViewHud>();
-            if (view == null)
+            ControllerHud controller = GetComponent<ControllerHud>();
+            if (controller == null)
             {
-                Debug.LogError("should have view");
+                Debug.LogError("should have controller");
                 return;
             }
         }
