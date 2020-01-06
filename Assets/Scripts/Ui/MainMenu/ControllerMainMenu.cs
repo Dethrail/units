@@ -5,7 +5,6 @@ using Zenject;
 namespace UI.MainMenu
 {
     [RequireComponent(typeof(ViewMainMenu))]
-    [RequireComponent(typeof(ModelMainMenu))]
     public class ControllerMainMenu : MonoBehaviour
     {
         [Inject] private GameUi _gameUi;
@@ -45,13 +44,7 @@ namespace UI.MainMenu
         private void OnValidate()
         {
             _view = GetComponent<ViewMainMenu>();
-            _model = GetComponent<ModelMainMenu>();
             if (_view == null)
-            {
-                return;
-            }
-
-            if (_model == null)
             {
                 return;
             }

@@ -6,7 +6,6 @@ using Zenject;
 namespace UI.HUD
 {
     [RequireComponent(typeof(ViewHud))]
-    [RequireComponent(typeof(ModelHud))]
     public class ControllerHud : MonoBehaviour
     {
         [Inject] private GameUi _gameUi;
@@ -47,13 +46,7 @@ namespace UI.HUD
         private void OnValidate()
         {
             _view = GetComponent<ViewHud>();
-            _model = GetComponent<ModelHud>();
             if (_view == null)
-            {
-                return;
-            }
-
-            if (_model == null)
             {
                 return;
             }

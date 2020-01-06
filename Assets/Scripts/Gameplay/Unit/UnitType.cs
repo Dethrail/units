@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum UnitType
 {
-    Ally = 1,
-    Enemy = 2,
+    AllyZigZag = 11,
+    EnemyStraight = 31,
+    EnemyZigZag = 32,
 }
